@@ -216,7 +216,10 @@ DEPENDENCIES
   capybara (>= 2.15)
   chromedriver-helper
   coffee-rails (~> 4.2)
+<<<<<<< HEAD
   devise
+=======
+>>>>>>> 964cff31b26c718a1e9fd84607d4db0fe0141cb5
   faker
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
