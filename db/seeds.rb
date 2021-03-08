@@ -5,3 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Item.destroy_all
+
+require 'faker'
+20.times do |f|
+  items = Item.create!(title: Faker::Games::Pokemon.name, description: Faker::Creature::Cat.breed, price: Faker::Number.decimal, image_url: "https://www.laloutremasquee.com/wp-content/uploads/2010/11/john_blacksad.jpg")
+  end
