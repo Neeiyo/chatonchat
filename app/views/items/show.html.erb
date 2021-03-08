@@ -1,0 +1,22 @@
+<% items = Item.find(params[:id]) %>
+<div class="modal-content">
+                    <div class="close-modal" data-dismiss="modal"></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                
+                                    <h2 class="text-uppercase text-center"><%= items.title%></h2>
+                                    
+                                    <img class="img-fluid d-block mx-auto" src="<%= items.image_url %>" alt="">
+                                    <p>Description : <%= items.description %></p>
+                                    <ul class="list-inline">
+                                        <li>Prix: <%= items.price %>€</li>
+                                      
+                                    </ul>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
