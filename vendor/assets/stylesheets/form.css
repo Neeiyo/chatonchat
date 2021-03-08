@@ -1,0 +1,22 @@
+#login .fcontainer #login-row #login-column #login-box {
+    max-width: 600px;
+    height: 320px;
+    border: 1px solid #17a2b8;
+    background-color: #ffffff;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20%;
+}
+
+#login .fcontainer #login-row #login-column #login-box #login-form {
+    padding: 20px;
+}
+
+#login .fcontainer #login-row #login-column #login-box #login-form #register-link {
+    margin-top: -85px;
+}
+
+.right {
+    text-align: right;
+}
