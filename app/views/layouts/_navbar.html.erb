@@ -6,7 +6,7 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link text-white" href="#">Home <span class="sr-only">(current)</span></a>
+        <%= link_to "Home", root_path, class: "nav-link text-white" %>
       </li>
       <li class="nav-item">
         <a class="nav-link text-white" href="#">Mon panier</a>
@@ -14,9 +14,42 @@
       <li class="nav-item">
         <a class="nav-link text-white" href="#">Mes chats et moi</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link disabled text-white" href="#">Se connecter /  se déconnecter</a>
-      </li>
+
+      <% if !user_signed_in? %>
+      <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Login / Inscription
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><%= link_to "Sign up", new_user_registration_path, class: "dropdown-item"%></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><%= link_to "Log in", new_user_session_path, class: "dropdown-item"%></li>
+
+          </ul>
+        </li>
+      <% else %>
+      <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Se deconnecter 
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            
+            
+
+            
+        
+            <li><%= link_to "Log out",  destroy_user_session_path, method: :delete, class: "dropdown-item"%></li>
+            
+
+          
+        </li>
+       <% end %>
+      
+
+
     </ul>
-  </div>
+  
 </nav>
+
+
+
