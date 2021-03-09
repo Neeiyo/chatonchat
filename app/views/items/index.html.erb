@@ -1,21 +1,35 @@
-
-
-<div class="row" style="margin: 20%; margin-top: 10%;">
-  <% @items.each do |item| %>
-    <div class="col-lg-4 col-md-6 mb-4">
-     <div class="card h-100" style="width: 15rem;">
-        <a href="#"><img class="card-img-top" src= "<%= item.image_url %>" alt=""></a>
-        <div class="card-body">
-            <h4 class="card-title">
-            <%= link_to item.title, item_path(item.id)%>
-            </h4>
-            <h5><%= item.price%>€</h5>
-            <p class="card-text"><%= item.description %></p>
+<div class="container">
+        <div class="row">
+    
+            <div class="title text-center">
+                <h2>Nos photos de chats</h2>
+            </div>
+    </div>
+        
+        <div class="row">
+        <% @items.each do |item| %>
+        <div class="col-md-3">
+        <div class="product-item">
+    
+        
+            <div class="product-thumb">
+            
+                <img class="img-responsive" src="<%= item.image_url %>" alt="product-img">
+                <div class="preview-meta">
+                    
+            </div>
         </div>
-      </div>
-  
-  </div>
-  <% end %>
-</div>
+            <div class="product-content">
+                <h4><%= link_to item.title, item_path(item.id)%></h4>
+                <p class="price"><%= item.price%>€</p>
+                
+            </div>
+        
+    
+    
+    
+    </div>
 
-
+    </div>
+    <% end %>
+    </div>
