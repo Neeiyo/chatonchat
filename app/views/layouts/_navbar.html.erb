@@ -108,19 +108,21 @@
         <%=link_to "Mon panier",cart_path(current_user.id), class: "nav-link text-black" %>
       </li>
 	  <%end%>
+    <%if current_user%>
       <li class="nav-item">
         <a class="nav-link text-black" href="#">Mes chats et moi</a>
       </li>
+      <%end%>
       <% if !user_signed_in? %>
       <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle text-black" href="#" id="navbarDropdown" data-hover="dropdown" data-delay="350" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Login / Inscription <span class="tf-ion-ios-arrow-down"></span>
+          Connexion / Inscription <span class="tf-ion-ios-arrow-down"></span>
           </a>
           
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><%= link_to "Sign up", new_user_registration_path, class: "dropdown-item"%></li>
+            <li><%= link_to "Inscription", new_user_registration_path, class: "dropdown-item"%></li>
             <li><hr class="dropdown-divider"></li>
-            <li><%= link_to "Log in", new_user_session_path, class: "dropdown-item"%></li>
+            <li><%= link_to "Connexion", new_user_session_path, class: "dropdown-item"%></li>
           </ul>
         </li>
       <% else %>
@@ -129,7 +131,7 @@
         Se déconnecter <span class="tf-ion-ios-arrow-down"></span> 
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">        
-          <li><%= link_to "Log out",  destroy_user_session_path, method: :delete, class: "dropdown-item"%></li>          
+          <li><%= link_to "Déconnexion",  destroy_user_session_path, method: :delete, class: "dropdown-item"%></li>          
         </li>
        <% end %>
     </ul>
