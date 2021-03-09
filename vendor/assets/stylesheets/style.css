@@ -1263,6 +1263,10 @@ input[type="tel"]:focus {
     transform: translate(0, 0);
 }
 
+.textcenter{
+  text-align: center;
+}
+
 .product-modal .close {
     width: 50px;
     float: none;
@@ -1648,7 +1652,6 @@ input[type="tel"]:focus {
     font-weight: normal;
 }
 
-
 /*=================================================================
   Pricing section
 ==================================================================*/
@@ -1801,7 +1804,6 @@ input[type="tel"]:focus {
     display: inline-block;
 }
 
-
 /*=================================================================
   Latest Posts
 ==================================================================*/
@@ -1917,7 +1919,6 @@ input[type="tel"]:focus {
 .post-pagination>li:last-child>a {
     border-radius: 0;
 }
-
 
 /*=================================================================
   Single Blog Page
