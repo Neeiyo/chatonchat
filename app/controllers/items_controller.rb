@@ -10,4 +10,9 @@ class ItemsController < ApplicationController
   def create
     @items = Item.create
   end 
+
+  def show 
+    @item = Item.find(params[:id])
+    @user = current_user
+  end 
 end
