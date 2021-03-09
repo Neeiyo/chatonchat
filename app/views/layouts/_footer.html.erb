@@ -5,21 +5,33 @@
     <!-- Grid container -->
     <div class="container p-4 pb-0">
       <!-- Section: CTA -->
+      <%if !current_user%>
       <section class="">
         <p class="d-flex justify-content-center align-items-center text-dark" font-family="AustinBold">
-          <span class="me-3" >Register for free</span>
-          <%= button_to "Sign up", new_user_registration_path, class:"btn btn-outline-light btn-rounded text-dark", :method => :get %>
+          <span class="me-1" font-family="AustinBold">INSCRIVEZ-VOUS GRATUITEMENT :</span>
+          <%= button_to "inscription", new_user_registration_path, class:"btn btn-main mt-20 me-1", style:"margin-bottom: 2%;", :method => :get %>
           
         </p>
       </section>
       <!-- Section: CTA -->
     </div>
     <!-- Grid container -->
-
+    <%else%>
+    <section class="">
+        <p class="d-flex justify-content-center align-items-center text-dark" font-family="AustinBold">
+          <span class="me-1" font-family="AustinBold">MERCI D'AVOIR FAIT CONFIANCE À NOS CHATONS :</span>
+        </p>
+        <p class="d-flex justify-content-center align-items-center text-dark" font-family="AustinBold">Pour toute réclamation, veuillez nous adresser un mail à</p>
+        <p class="d-flex justify-content-center align-items-center text-dark" font-family="AustinBold"><a>  contact@chatonchat.com</a></p>
+      </section>
+      <!-- Section: CTA -->
+    </div>
+    <%end%>
+    <br>
     <!-- Copyright -->
     <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.03);">
       © 2020 Copyright:
-      <a class="text-dark" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+      <a class="text-dark" href="https://mdbootstrap.com/">MKBugnes.com</a>
     </div>
     <!-- Copyright -->
   </footer>
