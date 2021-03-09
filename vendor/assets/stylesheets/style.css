@@ -1190,6 +1190,10 @@ input[type="email"]:focus, input[type="password"]:focus, input[type="text"]:focu
           transform: translate(0, 0);
 }
 
+.textcenter{
+  text-align: center;
+}
+
 .product-modal .close {
   width: 50px;
   float: none;

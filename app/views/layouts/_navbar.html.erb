@@ -1,57 +1,140 @@
-<nav class="navbar navbar-expand-lg navbar-light fixed-top bluep">
-  <a class="navbar-brand text-white" href="#">CHATON CHAT</a>
+<section class="top-header">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4 col-xs-12 col-sm-4">
+				<div class="contact-number">
+					<i class="tf-ion-ios-telephone"></i>
+					<span>03.45.45.45.45</span>
+				</div>
+			</div>
+			<div class="col-md-4 col-xs-12 col-sm-4">
+				<!-- Site Logo -->
+				<div class="logo text-center">
+					<a href="/">
+						<!-- replace logo here -->
+						<svg width="135px" height="29px" viewBox="0 0 170 29" version="1.1" xmlns="http://www.w3.org/2000/svg"
+							xmlns:xlink="http://www.w3.org/1999/xlink">
+							<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" font-size="40"
+								font-family="AustinBold, Austin" font-weight="bold">
+								<g id="Group" transform="translate(-108.000000, -297.000000)" fill="#000000">
+									<text id="AVIATO">
+										<tspan x="108.94" y="325">CHATON </br></tspan>
+                    <svg width="135px" height="29px" viewBox="0 0 170 29" version="1.1" xmlns="http://www.w3.org/2000/svg"
+							xmlns:xlink="http://www.w3.org/1999/xlink">
+							<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" font-size="40"
+								font-family="AustinBold, Austin" font-weight="bold">
+								<g id="Group" transform="translate(-108.000000, -297.000000)" fill="#000000">
+									<text id="AVIATO">
+                    <tspan x="135.94" y="325">CHAT</tspan>
+									</text>
+								</g>
+							</g>
+						</svg>
+					</a>
+				</div>
+			</div>
+			<div class="col-md-4 col-xs-12 col-sm-4">
+				<!-- Cart -->
+				<ul class="top-menu text-right list-inline">
+					<li class="dropdown cart-nav dropdown-slide">
+						<a href="#!" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"><i
+								class="tf-ion-android-cart"></i>Cart</a>
+						<div class="dropdown-menu cart-dropdown">
+							<!-- Cart Item -->
+							<div class="media">
+								<a class="pull-left" href="#!">
+									<img class="media-object" src="images/shop/cart/cart-1.jpg" alt="image" />
+								</a>
+								<div class="media-body">
+									<h4 class="media-heading"><a href="#!">CAT</a></h4>
+									<div class="cart-price">
+										<span>1 x</span>
+										<span>1250.00</span>
+									</div>
+									<h5><strong>$@@@@@@@</strong></h5>
+								</div>
+								<a href="#!" class="remove"><i class="tf-ion-close"></i></a>
+							</div><!-- / Cart Item -->
+							<!-- Cart Item -->
+							<div class="media">
+								<a class="pull-left" href="#!">
+									<img class="media-object" src="images/shop/cart/cart-2.jpg" alt="image" />
+								</a>
+								<div class="media-body">
+									<h4 class="media-heading"><a href="#!">CAT</a></h4>
+									<div class="cart-price">
+										<span>1 x</span>
+										<span>1250.00</span>
+									</div>
+									<h5><strong>$@@@@@@</strong></h5>
+								</div>
+								<a href="#!" class="remove"><i class="tf-ion-close"></i></a>
+							</div><!-- / Cart Item -->
+
+							<div class="cart-summary">
+								<span>Total</span>
+								<span class="total-price">$@@@@@@@</span>
+							</div>
+							<ul class="text-center cart-buttons">
+								<li><a href="cart.html" class="btn btn-small">View Cart</a></li>
+								<li><a href="checkout.html" class="btn btn-small btn-solid-border">Checkout</a></li>
+							</ul>
+						</div>
+
+					</li><!-- / Cart -->
+
+
+				</ul><!-- / .nav .navbar-nav .navbar-right -->
+			</div>
+		</div>
+	</div>
+</section><!-- End Top Header Bar -->
+
+<!-- OUR NAVBAR -->
+
+<section class="menu">
+<nav class="navbar navigation">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav mr-auto">
+  <div class="textcenter">
+    <ul class="navbar-nav">
       <li class="nav-item active">
-        <%= link_to "Home", root_path, class: "nav-link text-white" %>
+        <%= link_to "Home", root_path, class: "nav-link text-black" %>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-white" href="#">Mon panier</a>
+        <a class="nav-link text-black" href="#">Mon panier</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-white" href="#">Mes chats et moi</a>
+        <a class="nav-link text-black" href="#">Mes chats et moi</a>
       </li>
-      </ul>
-
-      <ul class="navbar-nav ml-auto">
       <% if !user_signed_in? %>
       <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          Login / Inscription
+          <a class="nav-link dropdown-toggle text-black" href="#" id="navbarDropdown" data-hover="dropdown" data-delay="350" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Login / Inscription <span class="tf-ion-ios-arrow-down"></span>
           </a>
+          
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><%= link_to "Sign up", new_user_registration_path, class: "dropdown-item"%></li>
             <li><hr class="dropdown-divider"></li>
             <li><%= link_to "Log in", new_user_session_path, class: "dropdown-item"%></li>
-
           </ul>
         </li>
       <% else %>
       <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          Se deconnecter 
+        <a class="nav-link dropdown-toggle text-black" href="#" id="navbarDropdown" data-hover="dropdown" data-delay="350" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Se déconnecter <span class="tf-ion-ios-arrow-down"></span> 
           </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            
-            
-
-            
-        
-            <li><%= link_to "Log out",  destroy_user_session_path, method: :delete, class: "dropdown-item"%></li>
-            
-
-          
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">        
+          <li><%= link_to "Log out",  destroy_user_session_path, method: :delete, class: "dropdown-item"%></li>          
         </li>
        <% end %>
-      
-
-
     </ul>
-  
+    </div>
+  </div>
 </nav>
+</section>
 
 
 
