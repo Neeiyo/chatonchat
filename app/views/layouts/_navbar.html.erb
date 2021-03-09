@@ -103,9 +103,11 @@
       <li class="nav-item active">
         <%= link_to "Home", root_path, class: "nav-link text-black" %>
       </li>
+	  <%if current_user%>
       <li class="nav-item">
-        <a class="nav-link text-black" href="#">Mon panier</a>
+        <%=link_to "Mon panier",cart_path(current_user.id), class: "nav-link text-black" %>
       </li>
+	  <%end%>
       <li class="nav-item">
         <a class="nav-link text-black" href="#">Mes chats et moi</a>
       </li>
