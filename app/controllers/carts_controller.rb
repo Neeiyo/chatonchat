@@ -10,5 +10,11 @@ class CartsController < ApplicationController
       redirect_to cart_path(current_user.id)
     end
   end
+  
+  @cartitem = []
+  def update
+    @cartitem = @cartitem + Cart.update(item_id: params[:id])
+    redirect_to root_path
+  end
 
 end

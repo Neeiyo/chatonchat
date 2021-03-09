@@ -34,17 +34,17 @@
                   </tr>
                 </thead>
               
-              <% @item.each do |item|%>
+              <% @array.each do |item|%>
               
                 <tbody>
                   <tr class="">
                     <td class="">
                       <div class="product-info">
                         <img width="80" src="images/shop/cart/cart-1.jpg" alt="">
-                        <a href="#!"><%=Item.find(params[:id]).title%></a>
+                        <a href="#!"><%=item.find(params[:id]).title%></a>
                       </div>
                     </td>
-                    <td class=""><%=Item.find(params[:id]).price%></td>
+                    <td class=""><%=item.find(params[:id]).price%></td>
                     <td class="">
                       <a class="product-remove" href="#!">Remove</a>
                     </td>
