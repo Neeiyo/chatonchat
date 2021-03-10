@@ -18,7 +18,7 @@ class OrdersController < ApplicationController
                 end 
             end
         
-        redirect_to cart_path(current_user.id), notice: "good"
+        redirect_to order_path(current_user.id), notice: "good"
         
     end
 
