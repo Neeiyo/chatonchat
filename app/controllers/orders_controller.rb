@@ -6,9 +6,8 @@ class OrdersController < ApplicationController
 
 
     def create
-        
-        
-         @order = Order.create(cart_item_id: @cart_item, user_id: current_user.id)
+        @cart_item = CartItem.find_by(cart_id: current_user.id).id
+         @order = Order.create(cart_item_id: @cart_item, user_id: current_user.id, total: $total)
             @cart = CartItem.find_by(cart_id: current_user.id)
             @carts = CartItem.all
 
@@ -22,4 +21,5 @@ class OrdersController < ApplicationController
         redirect_to cart_path(current_user.id), notice: "good"
         
     end
+
 end
