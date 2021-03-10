@@ -26,8 +26,7 @@ class CartsController < ApplicationController
     @user = current_user
     @item = Item.find_by(id: params[:id])
     @cart = Cart.find_by(user_id: current_user.id)
-    @cart_item = CartItem.find_by(cart_id: @user.id, item_id: CartItem.find_by(cart_id: @user.id).item_id)
-    @cart_item.destroy
+    @cart_item = CartItem.find_by(cart_id: @cart.id, item_id: @item.id).destroy
     redirect_to cart_path(current_user.id)
   end
 
