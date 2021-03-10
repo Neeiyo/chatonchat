@@ -16,6 +16,11 @@
 			
 				<img class="img-responsive" src="<%= item.image_url %>" alt="product-img">
 				<div class="preview-meta">
+				<%if current_user%>
+            <%= link_to "Ajouter au panier", cart_path(item.id), method: :put, class: "btn btn-main mt-20", style: "margin-bottom: 5%;"%>
+            <%else%>
+            <%= link_to "Connectez-vous", user_session_path, class: "btn btn-main mt-20", style: "margin-bottom: 5%;"%>
+	      <%end%>
 					
 			</div>
 		</div>

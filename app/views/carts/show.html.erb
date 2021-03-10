@@ -62,9 +62,7 @@
        
 
               </table>
-              <%= form_tag orders_path(action: 'create'), method: "post" do%>
-                <%= submit_tag "Confirmer le panier", class: "product-remove", class:"btn btn-main pull-right"%>
-                <%end%>
+                <%= link_to "Confirmer le panier", orders_path, method: :post, class:"btn btn-main pull-right"%>
             </form>
           </div>
         </div>
