@@ -34,24 +34,25 @@
                   </tr>
                 </thead>
               
-              <% @array.each do |item|%>
               
+              <% @cartitem.each do |index| %>
                 <tbody>
                   <tr class="">
                     <td class="">
                       <div class="product-info">
                         <img width="80" src="images/shop/cart/cart-1.jpg" alt="">
-                        <a href="#!"><%=item.find(params[:id]).title%></a>
+                        <a href="#!"><%= index.item_id%></a>
                       </div>
                     </td>
-                    <td class=""><%=item.find(params[:id]).price%></td>
+                    <td class=""><%= index.cart_id%></td>
                     <td class="">
                       <a class="product-remove" href="#!">Remove</a>
                     </td>
                   </tr>
                 </tbody>
-              
-                <% end %>
+
+              <% end %>
+       
 
               </table>
               <a href="checkout.html" class="btn btn-main pull-right">Checkout</a>

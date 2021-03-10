@@ -4,17 +4,24 @@ class CartsController < ApplicationController
 
   def show
     @item = Item.all
-    @cart = Cart.find_by(user_id: params[:id])
-    if current_user.id == @cart.id
+    @carts = Cart.find_by(user_id: current_user.id)
+    @cart = current_cart
+    @cartitem = CartItem.all
+    if current_user.id == @carts.id
+
     else 
       redirect_to cart_path(current_user.id)
     end
   end
   
-  @cartitem = []
+ 
   def update
-    @cartitem = @cartitem + Cart.update(item_id: params[:id])
+    @cart = Cart.find_by(user_id: current_user.id)
+    new_item = CartItem.create(cart_id: @cart.id, item_id: params[:id])
     redirect_to root_path
+    
   end
+
+  
 
 end
