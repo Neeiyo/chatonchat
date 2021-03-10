@@ -36,6 +36,7 @@
               
               
               <% @cartitem.each do |index| %>
+                <% if (current_user.id == index.cart_id) %>
                 <tbody>
                   <tr class="">
                     <td class="">
@@ -50,7 +51,7 @@
                     </td>
                   </tr>
                 </tbody>
-
+                <%end%>
               <% end %>
        
 
