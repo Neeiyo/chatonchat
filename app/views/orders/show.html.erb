@@ -1,0 +1,43 @@
+<div class="page-wrapper">
+   <div class="checkout shopping">
+      <div class="container">
+         <div class="row">
+            <div class="col-md-4">
+               <div class="product-checkout-details">
+                  <div class="block">
+                     <h4 class="widget-title">Order Summary</h4>
+                     <div class="media product-card">
+                        <a class="pull-left" href="product-single.html">
+                        </a>
+                        <div class="media-body">
+                           <h4 class="media-heading"><a href="product-single.html">Ambassador Heritage 1921</a></h4>
+                           <p class="price">1 x <%=Order.last.total%></p>
+                           <span class="remove">Remove</span>
+                        </div>
+                     </div>
+                     <div class="discount-code">
+                        <p>Have a discount ? <a data-toggle="modal" data-target="#coupon-modal" href="#!">enter it here</a></p>
+                     </div>
+                     <ul class="summary-prices">
+                        <li>
+                           <span>Subtotal:</span>
+                           <span class="price"><%=Order.last.total%></span>
+                        </li>
+                        <li>
+                           <span>Shipping:</span>
+                           <span>Free</span>
+                        </li>
+                     </ul>
+                     <div class="summary-total">
+                        <span>Total</span>
+                        <span><%=Order.last.total%></span>
+                     </div>
+                     <div class="verified-icon">
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
