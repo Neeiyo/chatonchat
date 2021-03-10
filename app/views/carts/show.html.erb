@@ -34,9 +34,11 @@
                   </tr>
                 </thead>
               
-              
+                <% @total = 0 %>
               <% @cartitem.each do |index| %>
+                
                 <% if (current_user.id == index.cart_id)%>
+                
                 <tbody>
                   <tr class="">
                     <td class="">
@@ -45,17 +47,18 @@
                         <a href="#!"><%= Item.find(index.item_id).title%></a>
                       </div>
                     </td>
-                    <td class=""><%= Item.find(index.item_id).price%></td>
+                    <td class=""><%= @price = Item.find(index.item_id).price.to_i%></td>
                     <td class="">
-                      <a class="product-remove" href="#!">Supprimer</a>
-                      <%= form_tag cart_path(action: 'destroy'), method: "delete" do%>
-                      <%= submit_tag "Supprimer", class: "product-remove"%>
-                      <%end%>
+                    <% @current = Item.find(index.item_id).id %>
+                      <%= link_to "Supprimer", cart_path(@current), method: :delete, class: "product-remove" %>
                     </td>
-                  </tr>
+                    
+                    <% @total += @price %>
                 </tbody>
+                
                 <%end%>
               <% end %>
+              <p>Prix total : <%= @total %></p>
        
 
               </table>
