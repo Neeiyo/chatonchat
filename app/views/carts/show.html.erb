@@ -34,7 +34,7 @@
                   </tr>
                 </thead>
               
-                <% @total = 0 %>
+                <% $total = 0 %>
               <% @cartitem.each do |index| %>
                 
                 <% if (current_user.id == index.cart_id)%>
@@ -53,16 +53,16 @@
                       <%= link_to "Supprimer", cart_path(@current), method: :delete, class: "product-remove" %>
                     </td>
                     
-                    <% @total += @price %>
+                    <% $total += @price %>
                 </tbody>
                 
                 <%end%>
               <% end %>
-              <p>Prix total : <%= @total %></p>
+              <p>Prix total : <%= $total %></p>
        
 
               </table>
-                <%= link_to "Confirmer le panier", orders_path, method: :post, class:"btn btn-main pull-right"%>
+                <%= link_to "Confirmer le panier", orders_path(@total), method: :post, class:"btn btn-main pull-right"%>
             </form>
           </div>
         </div>
