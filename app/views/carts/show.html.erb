@@ -36,18 +36,21 @@
               
               
               <% @cartitem.each do |index| %>
-                <% if (current_user.id == index.cart_id) %>
+                <% if (current_user.id == index.cart_id)%>
                 <tbody>
                   <tr class="">
                     <td class="">
                       <div class="product-info">
                         <img width="80" src="images/shop/cart/cart-1.jpg" alt="">
-                        <a href="#!"><%= index.item_id%></a>
+                        <a href="#!"><%= Item.find(index.item_id).title%></a>
                       </div>
                     </td>
-                    <td class=""><%= index.cart_id%></td>
+                    <td class=""><%= Item.find(index.item_id).price%></td>
                     <td class="">
                       <a class="product-remove" href="#!">Supprimer</a>
+                      <%= form_tag cart_path(action: 'destroy'), method: "delete" do%>
+                      <%= submit_tag "Supprimer", class: "product-remove"%>
+                      <%end%>
                     </td>
                   </tr>
                 </tbody>
