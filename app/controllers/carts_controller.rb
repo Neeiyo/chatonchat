@@ -30,6 +30,6 @@ class CartsController < ApplicationController
     redirect_to cart_path(current_user.id)
   end
 
-  
+
 
 end
