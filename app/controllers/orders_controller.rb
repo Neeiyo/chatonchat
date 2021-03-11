@@ -47,6 +47,41 @@ class OrdersController < ApplicationController
       #UserMailer.confirmation_email(User.find(Order.last.user_id)).deliver_now
     end
 
+    def admin_email
+        variable = Mailjet::Send.create(messages: [{
+            'From'=> {
+              'Email'=> 'louis.grandjean99@gmail.com',
+              'Name'=> 'Louis'
+            },
+            'To'=> [
+              {
+                'Email'=> 'chatonchat@yopmail.com',
+                'Name'=> 'Administrateur'
+              }
+            ],
+            'Subject'=> 'Order confirmation',
+            'TextPart'=> 'Order confirmation',
+            'HTMLPart'=> "<section class='page-wrapper success-msg'>
+            <div class='container'>
+              <div class='row'>
+                <div class='col-md-6 col-md-offset-3'>
+                  <div class='block text-center'>
+                    <i class='tf-ion-android-checkmark-circle'></i>
+                    <h2 class='text-center'>Hi #{User.find(Order.last.user_id).email} has make a purchase</h2>
+                    <p>Total: #{Order.last.total} $</p>
+                    <p>Id: #{Order.last.id}</p>
+                    <a href='shop.html' class='btn btn-main mt-20'>Continue Shopping</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>",
+            'CustomID' => 'AppGettingStartedTest'
+          }]
+          )
+          p variable.attributes['Messages']
+    end
+
 
     def create
         @cart_item = CartItem.find_by(cart_id: current_user.id)
@@ -77,6 +112,7 @@ class OrdersController < ApplicationController
             })
             redirect_to orders_path
             confirmation_email_send
+            admin_email
 
             rescue Stripe::CardError => e
             flash[:error] = e.message
