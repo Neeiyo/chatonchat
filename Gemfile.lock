@@ -80,6 +80,7 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
     dotenv (2.7.6)
@@ -204,6 +205,7 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
+    stripe (5.30.0)
     table_print (1.5.7)
     thor (1.1.0)
     thread_safe (0.3.6)
@@ -254,6 +256,7 @@ DEPENDENCIES
   selenium-webdriver
   spring
   spring-watcher-listen (~> 2.0.0)
+  stripe
   table_print
   turbolinks (~> 5)
   tzinfo-data
