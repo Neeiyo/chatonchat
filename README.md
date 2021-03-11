@@ -21,4 +21,6 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
+* LINK TO HEROKU : 
+https://chatonchat.herokuapp.com/
+
