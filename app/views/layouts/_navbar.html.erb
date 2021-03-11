@@ -65,7 +65,7 @@
 	  <%end%>
     <%if current_user%>
       <li class="nav-item">
-        <a class="nav-link text-black" href="#">Mes chats et moi</a>
+		<%=link_to "Mes chats et moi", user_path(current_user.id), class: "nav-link text-black" %>
       </li>
       <%end%>
       <% if !user_signed_in? %>
