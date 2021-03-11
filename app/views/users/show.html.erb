@@ -19,30 +19,26 @@
 									<tr>
 										<th>Order ID</th>
 										<th>Date</th>
-										<th>Items</th>
 										<th>Total Price</th>
 										<th></th>
 									</tr>
 								</thead>
 								<tbody>
+
+								<% @order = Order.all %>
+								<% @order.each do |index| %>
+
+								<% if (current_user.id == index.user_id)%>
+          
+								
 									<tr>
-										<td><a href="#!">#252125</a></td>
-										<td>Mar 25, 2016</td>
-										<td>2</td>
-										<td>$ 99.00</td>
+										<td><%=index.id%></td>
+										<td><%=index.created_at%></td>
+										<td><%=index.total%> $</td>
 									</tr>
-									<tr>
-										<td><a href="#!">#252125</a></td>
-										<td>Mar 25, 2016</td>
-										<td>2</td>
-										<td>$ 99.00</td>
-									</tr>
-									<tr>
-										<td><a href="#!">#252125</a></td>
-										<td>Mar 25, 2016</td>
-										<td>2</td>
-										<td>$ 99.00</td>
-									</tr>
+									<%end%>
+									<%end%>
+
 								</tbody>
 							</table>
 						</div>
