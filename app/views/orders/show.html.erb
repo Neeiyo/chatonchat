@@ -1,0 +1,64 @@
+<div class="page-wrapper">
+   <div class="checkout shopping">
+   <div class="jumbotron mr-auto ml-auto">
+      <div class="container">
+         <div class="row">
+            <div class="col-md-6">
+               <div class="product-checkout-details">
+                  <div class="block">
+                     <h4 class="widget-title">Résumé de la Commande</h4>
+                     <div class="media product-card">
+                        <a class="pull-left" href="product-single.html">
+                        </a>
+                        <div class="media-body">
+                           <p class="price">1 x <%=Order.last.total%></p>
+                        </div>
+                     </div>
+                     <div class="discount-code">
+                        <p>Have a discount ? <a data-toggle="modal" data-target="#coupon-modal" href="#!">enter it here</a></p>
+                     </div>
+                     <ul class="summary-prices">
+                        <li>
+                           <span>Subtotal:</span>
+                           <span class="price"><%=Order.last.total%></span>
+                        </li>
+                        <li>
+                           <span>Shipping:</span>
+                           <span>Free</span>
+                        </li>
+                     </ul>
+                     <div class="summary-total">
+                        <span>Total</span>
+                        <span><%=Order.last.total%></span>
+                     </div>
+                     <div class="verified-icon">
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+<div class="col-md-6">
+<%= form_tag orders_path do %>
+   <article>
+     <% if flash[:error].present? %>
+       <div id="error_explanation">
+         <p><%= flash[:error] %></p>
+       </div>
+     <% end %>
+     <label class="amount">
+       <span>Amount: <%= @stripe_amount %>€</span>
+     </label>
+   </article>
+   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+       data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+       data-description="Achat d'un produit"
+       data-amount= <%= @stripe_amount * 100 %>
+       data-locale="auto">
+   </script>
+   <% end %>
+   </div>
+   </div>
+   </div>
+   </div>
+</div>

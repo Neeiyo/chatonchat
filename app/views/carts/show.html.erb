@@ -1,0 +1,73 @@
+<section class="page-header">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="content">
+					<h1 class="page-name">Panier</h1>
+					<ol class="breadcrumb">
+						<li><a href="/">Accueil</a></li>
+						<li class="active">Panier</li>
+					</ol>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+
+
+<div class="page-wrapper">
+<div class="cart shopping">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <div class="block">
+          <div class="product-list">
+            <form method="post">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th class="">Nom du produit</th>
+                    <th class="">Prix du produit</th>
+                    <th class="">Actions</th>
+                  </tr>
+                </thead>
+              
+                <% $total = 0 %>
+              <% @cartitem.each do |index| %>
+                
+                <% if (current_user.id == index.cart_id)%>
+                
+                <tbody>
+                  <tr class="">
+                    <td class="">
+                      <div class="product-info">
+                        <img width="80" src="images/shop/cart/cart-1.jpg" alt="">
+                        <a href="#!"><%= Item.find(index.item_id).title%></a>
+                      </div>
+                    </td>
+                    <td class=""><%= @price = Item.find(index.item_id).price.to_i%></td>
+                    <td class="">
+                    <% @current = Item.find(index.item_id).id %>
+                      <%= link_to "Supprimer", cart_path(@current), method: :delete, class: "product-remove" %>
+                    </td>
+                    
+                    <% $total += @price %>
+                </tbody>
+                
+                <%end%>
+              <% end %>
+              <p>Prix total : <%= $total %></p>
+       
+
+              </table>
+                <%= link_to "Confirmer le panier", orders_path, method: :post, class:"btn btn-main pull-right"%>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

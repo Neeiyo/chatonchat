@@ -10,7 +10,18 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+
+//= require bootstrap
+//= require jquery
+//= require script
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
-//= require_tree .
+
+//= require ekko-lightbox
+//= require jquery.bootstrap-touchspin
+
+//= require jquery.syotimer.min
+
+//= require slick-animation.min
+//= require slick.min
