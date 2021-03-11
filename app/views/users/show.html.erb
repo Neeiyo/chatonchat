@@ -6,7 +6,7 @@
 					<div class="media">
 						
 						<div class="media-body">
-							<h2 class="media-heading">Welcome <%=User.find(params[:id]).email%></h2>
+							<h2 class="media-heading">Bonjour <%=User.find(params[:id]).email%></h2>
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, iure, est. Sit mollitia est maxime! Eos
 								cupiditate tempore, tempora omnis. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim, nihil. </p>
 						</div>
@@ -39,13 +39,14 @@
 									</tr>
 									<%end%>
 									<%end%>
-
 								</tbody>
-							</table>
+							</table>	
+							<a><%= link_to "Editer le profil",  edit_user_registration_path, class: "btn btn-main pull-right"%></a>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+	
 </section>
