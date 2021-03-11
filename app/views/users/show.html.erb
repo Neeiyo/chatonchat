@@ -20,7 +20,7 @@
 										<th>Order ID</th>
 										<th>Date</th>
 										<th>Total Price</th>
-										<th></th>
+                                        <th>Status</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -35,6 +35,7 @@
 										<td><%=index.id%></td>
 										<td><%=index.created_at%></td>
 										<td><%=index.total%> $</td>
+                                        <td style="color:orange;">Pending</td>
 									</tr>
 									<%end%>
 									<%end%>
